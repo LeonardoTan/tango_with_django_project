@@ -1,0 +1,385 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"mo",
+				"ModelAdmin	class"
+			],
+			[
+				"model",
+				"Model"
+			],
+			[
+				"max",
+				"max_length"
+			],
+			[
+				"medi",
+				"media"
+			],
+			[
+				"med",
+				"MEDIA_ROOT"
+			],
+			[
+				"media",
+				"MEDIA_ROOT"
+			],
+			[
+				"static",
+				"STATIC_PATH	statement"
+			],
+			[
+				"base",
+				"BASE_DIR	statement"
+			],
+			[
+				"TEMP",
+				"TEMPLATE_PATH"
+			],
+			[
+				"bas",
+				"BASE_DIR	statement"
+			],
+			[
+				"appl",
+				"Application	class"
+			],
+			[
+				"aj",
+				"ajax(url, settings, settings) -> jqXHR"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 311.0,
+		"last_filter": "Package Control: ip",
+		"selected_items":
+		[
+			[
+				"Package Control: ip",
+				"Package Control: Install Package"
+			],
+			[
+				"pcip",
+				"Package Control: Install Package"
+			],
+			[
+				"pcrp",
+				"Package Control: Remove Package"
+			],
+			[
+				"cpi",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ipsum",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"pcre",
+				"Package Control: Remove Package"
+			],
+			[
+				"ip",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 432.0
+	},
+	"console":
+	{
+		"height": 236.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/media",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/__pycache__",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/static",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/static/images",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates"
+	],
+	"file_history":
+	[
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/models.py",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/populate_rango.py",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/admin.py",
+		"/C/Anaconda3/lib/site-packages/django/db/models/base.py",
+		"/C/Anaconda3/lib/site-packages/django/contrib/admin/sites.py",
+		"/D/Users/Leonardo/Downloads/cr_chs/使用说明.txt",
+		"/C/Users/Leonardo/AppData/Local/Temp/HZ$D.574.4761/HZ$D.574.4762/使用说明.txt",
+		"/D/Users/Leonardo/Downloads/cr_chs/license_file",
+		"/C/Program Files/PremiumSoft/Navicat Premium/license.txt",
+		"/C/Users/Leonardo/Desktop/license_file",
+		"/C/Anaconda3/lib/site-packages/django/db/models/fields/related.py",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/tango_with_django_project/urls.py",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/about.html",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/views.py",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/index.html",
+		"/C/Anaconda3/lib/site-packages/django/conf/urls/__init__.py",
+		"/C/Anaconda3/lib/site-packages/django/core/urlresolvers.py",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/urls.py",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/tango_with_django_project/settings.py",
+		"/C/Anaconda3/lib/site-packages/django/utils/six.py",
+		"/C/Anaconda3/lib/site-packages/django/views/static.py",
+		"/C/Anaconda3/lib/site-packages/django/contrib/staticfiles/views.py",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/User/Distraction Free.sublime-settings",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/D/Users/Leonardo/Documents/Python Examples/Rango/tango_with_django_project/tango_with_django_project/urls.py",
+		"/C/Anaconda3/Lib/site-packages/django/contrib/admin/locale/zh_Hans/LC_MESSAGES/django.mo",
+		"/C/Anaconda3/Lib/site-packages/django/contrib/admin/locale/zh_Hans/LC_MESSAGES/djangojs.mo",
+		"/C/Anaconda3/Lib/site-packages/django/contrib/admin/locale/zh_Hans/LC_MESSAGES/django.po",
+		"/C/Anaconda3/Lib/site-packages/django/contrib/admin/locale/zh_Hans/LC_MESSAGES/djangojs.po",
+		"/D/Users/Leonardo/Documents/Python Examples/Rango/tango_with_django_project/tango_with_django_project/settings.py",
+		"/C/Anaconda3/Lib/site-packages/django/utils/translation/trans_real.py",
+		"/D/Users/Leonardo/Documents/Python Examples/Rango/tango_with_django_project/manage.py",
+		"/C/Anaconda3/lib/site-packages/django/core/management/__init__.py",
+		"/D/Users/Leonardo/Documents/Python Examples/Rango/tango_with_django_project/rango/views.py",
+		"/D/Users/Leonardo/Documents/Python Examples/Rango/tango_with_django_project/rango/urls.py",
+		"/D/Users/Leonardo/Documents/Python Examples/Rango/tango_with_django_project/rango/tests.py",
+		"/C/Users/Leonardo/PycharmProjects/awesome-python3-webapp/www/app.py",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Recovery.txt",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/User/Python.sublime-settings",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/User/Python Django.sublime-settings",
+		"/C/Users/Leonardo/Desktop/index.html",
+		"/C/Users/Leonardo/PycharmProjects/awesome-python3-webapp/www/templates/blogs.html",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/ConvertToUTF8/ConvertToUTF8.sublime-settings",
+		"/C/Users/Leonardo/PycharmProjects/awesome-python3-webapp/awesome.sublime-project",
+		"/C/Users/Leonardo/PycharmProjects/awesome-python3-webapp/www/orm.py",
+		"/D/Users/Leonardo/Documents/python examples/template.txt",
+		"/D/Users/Leonardo/Documents/learngit/LICENSE.txt",
+		"/D/Users/Leonardo/Documents/learngit/readme.txt",
+		"/D/Users/Leonardo/Documents/路由中继配置.txt",
+		"/D/Users/Leonardo/Documents/Visual Studio 2015/Projects/ReadHtml/ReadHtml/App.xaml.cs",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Pretty JSON/Pretty JSON.sublime-settings",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/C/Users/Leonardo/PycharmProjects/awesome-python3-webapp/www/models.py",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Djaneiro/Settings/HTML (Django).sublime-settings",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Djaneiro/Settings/Python (Django).sublime-settings",
+		"/C/Users/Leonardo/PycharmProjects/awesome-python3-webapp/www/handlers.py",
+		"/D/Program Files/Python35/lib/logging/__init__.py",
+		"/C/Users/Leonardo/PycharmProjects/awesome-python3-webapp/www/coroweb.py",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Anaconda/README.md",
+		"/D/Program Files/Python35/lib/inspect.py",
+		"/D/Program Files/Python35/lib/re.py",
+		"/D/Program Files/Python35/lib/site-packages/jinja2/loaders.py",
+		"/D/Program Files/Python35/lib/json/__init__.py",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Anaconda/LICENSE",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/AutoPEP8/Default.sublime-keymap",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/AutoPEP8/AutoPep8.sublime-settings",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/User/AutoPep8.sublime-settings",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/PyV8/win64-p3/config.json",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/PyV8/win64-p3/PyV8.py",
+		"/C/Users/Leonardo/PycharmProjects/awesome-python3-webapp/www/static/js/bootstrap.js",
+		"/C/Users/Leonardo/PycharmProjects/awesome-python3-webapp/www/static/js/npm.js",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
+		"/C/Users/Leonardo/Desktop/已删除的应用.html",
+		"/D/Users/Leonardo/Documents/python examples/humansize.py",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/User/JSON.sublime-settings"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"get",
+			"get(",
+			"get_or_create",
+			",",
+			"staticfiles",
+			"static",
+			"staticc",
+			"staticfiles",
+			"STATICFILES_DIRS",
+			"file",
+			"trigger",
+			"auto_complete",
+			"auto_complete_triggers",
+			"pep8 autoformate",
+			"interpreter",
+			"div",
+			">\n",
+			"body",
+			"div",
+			"language"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"\\n",
+			"/n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 225.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 131.0
+	},
+	"pinned_build_system": "Anaconda Python Builder",
+	"project": "tango_with_django_project.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ind",
+				"templates\\rango\\index.html"
+			],
+			[
+				"",
+				"D:\\Users\\Leonardo\\Documents\\python examples\\humansize.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 195.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
