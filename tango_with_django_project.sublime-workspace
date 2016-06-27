@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"page",
+				"Page	class"
+			],
+			[
+				"category",
+				"category	function"
+			],
+			[
+				"cate",
+				"CategoryAdmin	class"
+			],
+			[
 				"mo",
 				"ModelAdmin	class"
 			],
@@ -137,15 +149,26 @@
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/media",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/__pycache__",
-		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/static",
-		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/static/images",
-		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates"
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/migrations",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango"
 	],
 	"file_history":
 	[
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/index.html",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/category.html",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/urls.py",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/models.py",
-		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/populate_rango.py",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/admin.py",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/views.py",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/about.html",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/User/JSON.sublime-settings",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Djaneiro/Settings/HTML (Django).sublime-settings",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Djaneiro/Settings/Python (Django).sublime-settings",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/populate_rango.py",
 		"/C/Anaconda3/lib/site-packages/django/db/models/base.py",
 		"/C/Anaconda3/lib/site-packages/django/contrib/admin/sites.py",
 		"/D/Users/Leonardo/Downloads/cr_chs/使用说明.txt",
@@ -155,18 +178,13 @@
 		"/C/Users/Leonardo/Desktop/license_file",
 		"/C/Anaconda3/lib/site-packages/django/db/models/fields/related.py",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/tango_with_django_project/urls.py",
-		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/about.html",
-		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/views.py",
-		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/index.html",
 		"/C/Anaconda3/lib/site-packages/django/conf/urls/__init__.py",
 		"/C/Anaconda3/lib/site-packages/django/core/urlresolvers.py",
-		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/urls.py",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/tango_with_django_project/settings.py",
 		"/C/Anaconda3/lib/site-packages/django/utils/six.py",
 		"/C/Anaconda3/lib/site-packages/django/views/static.py",
 		"/C/Anaconda3/lib/site-packages/django/contrib/staticfiles/views.py",
 		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/User/Distraction Free.sublime-settings",
-		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/D/Users/Leonardo/Documents/Python Examples/Rango/tango_with_django_project/tango_with_django_project/urls.py",
 		"/C/Anaconda3/Lib/site-packages/django/contrib/admin/locale/zh_Hans/LC_MESSAGES/django.mo",
 		"/C/Anaconda3/Lib/site-packages/django/contrib/admin/locale/zh_Hans/LC_MESSAGES/djangojs.mo",
@@ -182,7 +200,6 @@
 		"/C/Users/Leonardo/PycharmProjects/awesome-python3-webapp/www/app.py",
 		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
 		"/C/Recovery.txt",
-		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
 		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/User/Python.sublime-settings",
 		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/User/Python Django.sublime-settings",
 		"/C/Users/Leonardo/Desktop/index.html",
@@ -196,10 +213,7 @@
 		"/D/Users/Leonardo/Documents/路由中继配置.txt",
 		"/D/Users/Leonardo/Documents/Visual Studio 2015/Projects/ReadHtml/ReadHtml/App.xaml.cs",
 		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Pretty JSON/Pretty JSON.sublime-settings",
-		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
 		"/C/Users/Leonardo/PycharmProjects/awesome-python3-webapp/www/models.py",
-		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Djaneiro/Settings/HTML (Django).sublime-settings",
-		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Djaneiro/Settings/Python (Django).sublime-settings",
 		"/C/Users/Leonardo/PycharmProjects/awesome-python3-webapp/www/handlers.py",
 		"/D/Program Files/Python35/lib/logging/__init__.py",
 		"/C/Users/Leonardo/PycharmProjects/awesome-python3-webapp/www/coroweb.py",
@@ -220,8 +234,7 @@
 		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
 		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
 		"/C/Users/Leonardo/Desktop/已删除的应用.html",
-		"/D/Users/Leonardo/Documents/python examples/humansize.py",
-		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/User/JSON.sublime-settings"
+		"/D/Users/Leonardo/Documents/python examples/humansize.py"
 	],
 	"find":
 	{
@@ -240,6 +253,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"tab",
 			"get",
 			"get(",
 			"get_or_create",
