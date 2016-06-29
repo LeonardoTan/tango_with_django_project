@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"random",
+				"Random	class"
+			],
+			[
 				"page",
 				"Page	class"
 			],
@@ -67,6 +71,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "rango/views.py",
+			"settings":
+			{
+				"buffer_size": 886,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "Packages/Python/Python.sublime-build",
 	"build_system_choices":
@@ -155,6 +167,8 @@
 	],
 	"file_history":
 	[
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/populate_rango.py",
+		"/C/Anaconda3/lib/random.py",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/index.html",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/category.html",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/urls.py",
@@ -168,7 +182,6 @@
 		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Djaneiro/Settings/HTML (Django).sublime-settings",
 		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Djaneiro/Settings/Python (Django).sublime-settings",
 		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
-		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/populate_rango.py",
 		"/C/Anaconda3/lib/site-packages/django/db/models/base.py",
 		"/C/Anaconda3/lib/site-packages/django/contrib/admin/sites.py",
 		"/D/Users/Leonardo/Downloads/cr_chs/使用说明.txt",
@@ -293,8 +306,40 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "rango/views.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 886,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								807,
+								807
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 114.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

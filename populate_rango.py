@@ -6,6 +6,7 @@ import django
 django.setup()
 
 from rango.models import Category, Page
+from random import randint
 
 
 def populate():
@@ -47,7 +48,6 @@ def populate():
              title="Flask",
              url="http://flask.pocoo.org")
 
-    test_cat = add_cat("Test", 10, 5)
 
     # Print out what we have added to the user.
     for c in Category.objects.all():
@@ -56,6 +56,7 @@ def populate():
 
 
 def add_page(cat, title, url, views=0):
+    #views = randint(5, 20)
     p = Page.objects.get_or_create(
         category=cat, title=title, url=url, views=views)[0]
     if p:
