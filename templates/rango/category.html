@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cn">
+<html lang="zh-cn">
 <head>
 	<meta charset="UTF-8">
     {% if category %}
@@ -14,17 +14,19 @@
 {% if category %}
     <h1>{{category_name}}</h1>
     {% if pages %}
-            <ul>
-     {% for page in pages %}
+        <ul>
+        {% for page in pages %}
             <li><a href="{{page.url}}">{{page.title}}</a></li>
         {% endfor %}   
-    </ul>
+        </ul>
+        <a href="/rango/category/{{ category_name_url }}/add_page/">Add Page</a>
     {% else %}
         <strong>No pages currently in category.</strong>
+        <a href="/rango/category/{{ category_name_url }}/add_page/">Add Page</a>
     {% endif %}
     {% else %}
         The specified category {{ category_name }} does not exist!
-{% endif %}
-
+        <a href="/rango/add_category/">Add Category</a>
+{% endif %}    
 </body>
 </html>

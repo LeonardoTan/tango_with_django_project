@@ -113,6 +113,9 @@ STATICFILES_DIRS = (STATIC_PATH,)
 
 LANGUAGE_CODE = 'zh-Hans'
 
+LOGIN_URL = '/rango/login/'
+# LOGOUT_URL = '/rango/index/'
+
 TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
