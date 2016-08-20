@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="zh-cn">
-<head>
-    <meta charset="UTF-8">
-    <title>Rango</title>
-</head>
-<body>
+{% extends "rango/base.html" %}
+
+{% block title %}
+    Add a Category
+{% endblock title %}
+{% block body_block %}
+    
     <h1>Add a Category</h1>
-    <form id="category_form" method="POST" action="/rango/add_category/">
+    <form id="category_form" method="POST" action="{% url 'add_category' %}">
         {% csrf_token %}
         {% for hidden in form.hidden_fields %}
             {{ hedden }}
@@ -19,5 +19,5 @@
         {% endfor %}
         <input type="submit" name="submit" value="Create Category" />
     </form>
-</body>
-</html>
+
+{% endblock body_block %}

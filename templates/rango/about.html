@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="zh-cn">
-<head>
-	<meta charset="UTF-8">
-	<title>About</title>
-</head>
-<body>
-	<head><img src="{% static "images/wow.jpg"%}" alt="一个图片"/></head>
-	<h1>This is a About page</h1><a href="/rango">Home</a><br/>s	
-</body>
-</html>
+{% extends "rango/base.html" %}
+
+{% block title %}
+	About
+{% endblock title %}
+{% block body_block %}		
+	<h1>This is a About page</h1><a href="/rango">Home</a><br/>
+{% endblock body_block %}

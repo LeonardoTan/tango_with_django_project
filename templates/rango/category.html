@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="zh-cn">
-<head>
-	<meta charset="UTF-8">
-    {% if category %}
-        <title>{{category_name}}</title>
-        {% else %}
-    <title>Something Wrong</title>
-    {% endif %}
-	
-</head>
-<body>
+{% extends "rango/base.html" %}
+{% block title %}
+    {{ category_name }}
+{% endblock title %}
+
+{% block body_block %}    
 
 {% if category %}
     <h1>{{category_name}}</h1>
@@ -19,14 +13,13 @@
             <li><a href="{{page.url}}">{{page.title}}</a></li>
         {% endfor %}   
         </ul>
-        <a href="/rango/category/{{ category_name_url }}/add_page/">Add Page</a>
+        <a href="{% url 'add_page' category_name_url %}">Add Page</a>
     {% else %}
         <strong>No pages currently in category.</strong>
-        <a href="/rango/category/{{ category_name_url }}/add_page/">Add Page</a>
+        <a href="{% url 'add_page' category_name_url %}">Add Page</a>
     {% endif %}
     {% else %}
         The specified category {{ category_name }} does not exist!
-        <a href="/rango/add_category/">Add Category</a>
-{% endif %}    
-</body>
-</html>
+        <a href="{% url 'add_category' %}">Add Category</a>
+{% endif %}
+{% endblock body_block %}

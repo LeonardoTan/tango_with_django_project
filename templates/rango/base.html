@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Rango - {% block title %}How to Tango with Django!{% endblock title %}</title>
+</head>
+<body>s
+<div>
+	<head><img src="{% static "images/wow.jpg"%}" alt="Picture of Rango"/></head>
+    {% if user.is_authenticated %}
+    <h1>Rango says... hello {{ user.username }}!</h1>
+    {% else %}
+    <h1>Rango says... hello world!</h1>
+    {% endif %}
+    <ul>
+	{% block body_block %}
+		This is body_block's default content.
+	{% endblock body_block %}
+</div>
+<div>    
+  <ul>
+    {% if user.is_authenticated %}
+        <li><a href="{% url 'restricted' %}">Restricted Page</a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+        <li><a href="{% url 'add_category' %}">Add a New Category</a></li>
+    {% else %}
+        <li><a href="{% url 'register' %}">Register Here</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
+    {% endif %}    	
+        <li><a href="/rango/">Home</a> <a href="{% url 'about' %}">About</a></li>
+  </ul>
+</div>
+</body>
+</html>

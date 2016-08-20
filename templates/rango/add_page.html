@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="zh-cn">
-<head>
-    <meta charset="UTF-8">
-    <title>Add Page</title>
-</head>
-<body>
+{% extends "rango/base.html" %}
+{% block title %}
+    Add Page
+{% endblock title %}
+{% block body_block %}
     <h1>Add Page</h1>
     {% if category %}        
     
@@ -24,5 +22,4 @@
     {% else %}
     A category by this name does not exist.
     {% endif %}
-</body>
-</html>
+{% endblock body_block %}
