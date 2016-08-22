@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<title>Rango - {% block title %}How to Tango with Django!{% endblock title %}</title>
 </head>
-<body>s
+<body>
 <div>
 	<head><img src="{% static "images/wow.jpg"%}" alt="Picture of Rango"/></head>
     {% if user.is_authenticated %}
@@ -22,11 +22,12 @@
   <ul>
     {% if user.is_authenticated %}
         <li><a href="{% url 'restricted' %}">Restricted Page</a></li>
-        <li><a href="{% url 'logout' %}">Logout</a></li>
+        <li><a href="{% url 'auth_logout' %}?next=/rango/">Logout</a></li>
+        <li><a href="{% url 'auth_password_change' %}">修改密码</a></li>
         <li><a href="{% url 'add_category' %}">Add a New Category</a></li>
     {% else %}
-        <li><a href="{% url 'register' %}">Register Here</a></li>
-        <li><a href="{% url 'login' %}">Login</a></li>
+        <li><a href="{% url 'registration_register' %}">Register Here</a></li>
+        <li><a href="{% url 'auth_login' %}">Login</a></li>
     {% endif %}    	
         <li><a href="/rango/">Home</a> <a href="{% url 'about' %}">About</a></li>
   </ul>

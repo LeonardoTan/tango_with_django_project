@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"url",
+				"urls	module"
+			],
+			[
+				"regis",
+				"RegistrationView	class"
+			],
+			[
+				"user_lo",
+				"user_logout	function"
+			],
+			[
 				"httpre",
 				"HttpResponseRedirect	class"
 			],
@@ -30,10 +42,6 @@
 			[
 				"pass",
 				"PasswordInput	class"
-			],
-			[
-				"url",
-				"URLField	class"
 			],
 			[
 				"User",
@@ -123,6 +131,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "tango_with_django_project/urls.py",
+			"settings":
+			{
+				"buffer_size": 1430,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "rango/forms.py",
+			"settings":
+			{
+				"buffer_size": 1801,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "Packages/Python/Python.sublime-build",
 	"build_system_choices":
@@ -205,50 +229,60 @@
 	},
 	"expanded_folders":
 	[
-		"/D/Leo/Documents/PycharmProjects/tango_with_django_project",
-		"/D/Leo/Documents/PycharmProjects/tango_with_django_project/media",
-		"/D/Leo/Documents/PycharmProjects/tango_with_django_project/media/profile_images",
-		"/D/Leo/Documents/PycharmProjects/tango_with_django_project/rango",
-		"/D/Leo/Documents/PycharmProjects/tango_with_django_project/static",
-		"/D/Leo/Documents/PycharmProjects/tango_with_django_project/tango_with_django_project",
-		"/D/Leo/Documents/PycharmProjects/tango_with_django_project/templates",
-		"/D/Leo/Documents/PycharmProjects/tango_with_django_project/templates/rango"
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/__pycache__",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/tango_with_django_project",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/registration"
 	],
 	"file_history":
 	[
-		"/D/Leo/Documents/PycharmProjects/tango_with_django_project/templates/rango/login.html",
-		"/D/Leo/Documents/PycharmProjects/tango_with_django_project/templates/rango/base.html",
-		"/D/Leo/Documents/PycharmProjects/tango_with_django_project/rango/views.py",
-		"/D/Leo/Documents/PycharmProjects/tango_with_django_project/templates/rango/index.html",
-		"/D/Leo/Documents/PycharmProjects/tango_with_django_project/templates/rango/restricted.html",
-		"/D/Leo/Documents/PycharmProjects/tango_with_django_project/templates/rango/register.html",
-		"/D/Leo/Documents/PycharmProjects/tango_with_django_project/templates/rango/add_page.html",
-		"/D/Leo/Documents/PycharmProjects/tango_with_django_project/templates/rango/add_category.html",
-		"/D/Leo/Documents/PycharmProjects/tango_with_django_project/templates/rango/about.html",
-		"/D/Leo/Documents/PycharmProjects/tango_with_django_project/rango/models.py",
-		"/D/Leo/Documents/PycharmProjects/tango_with_django_project/templates/rango/category.html",
+		"/C/Anaconda3/lib/site-packages/registration/backends/simple/views.py",
+		"/C/Anaconda3/lib/site-packages/registration/views.py",
+		"/C/Anaconda3/lib/site-packages/django/views/generic/edit.py",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/tango_with_django_project/urls.py",
+		"/C/Anaconda3/lib/site-packages/registration/backends/simple/urls.py",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/registration/password_change_form.html",
+		"/C/Anaconda3/Lib/site-packages/registration/backends/default/urls.py",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/registration/logout.html",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/base.html",
+		"/C/Anaconda3/Lib/site-packages/registration/urls.py",
+		"/C/Anaconda3/lib/site-packages/registration/__init__.py",
+		"/C/Anaconda3/lib/site-packages/registration/backends/simple/__init__.py",
+		"/C/Anaconda3/Lib/site-packages/registration/backends/default/views.py",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/registration/password_change.html",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/registration/password_change_done.html",
+		"/C/Anaconda3/lib/site-packages/django/views/generic/base.py",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/registration/registration_form.html",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/views.py",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/urls.py",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/registration/registration_complete.html",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/index.html",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/registration/register.html",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/about.html",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/tango_with_django_project/settings.py",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/registration/login.html",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/login.html",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/category.html",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/models.py",
 		"/D/Users/Leonardo/Downloads/余罪完整精校版.txt",
 		"/D/Users/Leonardo/Downloads/yuzuicomplete.txt",
 		"/D/Users/Leonardo/Downloads/余罪完整 精校版.txt",
-		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/views.py",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/register.html",
-		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/models.py",
 		"/C/Anaconda3/lib/site-packages/django/db/models/fields/files.py",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/forms.py",
-		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/index.html",
-		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/urls.py",
 		"/C/Anaconda3/lib/site-packages/django/contrib/auth/models.py",
 		"/C/Anaconda3/lib/site-packages/django/db/models/base.py",
 		"/C/Anaconda3/lib/site-packages/django/contrib/admin/sites.py",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/admin.py",
-		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/category.html",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/add_page.html",
 		"/C/Anaconda3/lib/site-packages/django/forms/fields.py",
 		"/C/Anaconda3/lib/site-packages/django/forms/widgets.py",
 		"/C/Users/Leonardo/AppData/Local/Temp/HZ$D.708.4147/HZ$D.708.4148/使用说明.txt",
 		"/C/Anaconda3/lib/site-packages/django/forms/forms.py",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/add_category.html",
-		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/about.html",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/populate_rango.py",
 		"/C/Anaconda3/lib/random.py",
 		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
@@ -263,10 +297,8 @@
 		"/C/Program Files/PremiumSoft/Navicat Premium/license.txt",
 		"/C/Users/Leonardo/Desktop/license_file",
 		"/C/Anaconda3/lib/site-packages/django/db/models/fields/related.py",
-		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/tango_with_django_project/urls.py",
 		"/C/Anaconda3/lib/site-packages/django/conf/urls/__init__.py",
 		"/C/Anaconda3/lib/site-packages/django/core/urlresolvers.py",
-		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/tango_with_django_project/settings.py",
 		"/C/Anaconda3/lib/site-packages/django/utils/six.py",
 		"/C/Anaconda3/lib/site-packages/django/views/static.py",
 		"/C/Anaconda3/lib/site-packages/django/contrib/staticfiles/views.py",
@@ -339,7 +371,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"blockname",
+			"as_",
+			"as_view",
+			"logout",
 			"惹是生非",
 			"DoseNotExist",
 			"DoesNotExist",
@@ -384,8 +418,70 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "tango_with_django_project/urls.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1430,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1020,
+								1020
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 285.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "rango/forms.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1801,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1801,
+								1801
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 399.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -482,7 +578,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 195.0,
+	"side_bar_width": 211.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

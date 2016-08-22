@@ -3,6 +3,7 @@
     Home
 {% endblock title %}
 {% block body_block %}    
+    <p> visits: {{ visits }}</p>
     <h2>Pop Categories</h2>
         {% for category in category_list %}
         	<li><a href="{% url 'category' category.slug %}">{{category.name}}</a></li>

@@ -41,18 +41,18 @@ class PageForm(forms.ModelForm):
         return cleaned_data
 
 
-class UserForm(forms.ModelForm):
-    """docstring for UserForm"""
-    password = forms.CharField(widget=forms.PasswordInput())
+# class UserForm(forms.ModelForm):
+#     """docstring for UserForm"""
+#     password = forms.CharField(widget=forms.PasswordInput())
 
-    class Meta:
-        """docstring for Meta"""
-        model = User
-        fields = ['username', 'email', 'password']
+#     class Meta:
+#         """docstring for Meta"""
+#         model = User
+#         fields = ['username', 'email', 'password']
 
 
-class UserProfileForm(forms.ModelForm):
-    """docstring for Userp"""
-    class Meta:
-        model = UserProfile
-        fields = ['website', 'picture']
+# class UserProfileForm(forms.ModelForm):
+#     """docstring for Userp"""
+#     class Meta:
+#         model = UserProfile
+#         fields = ['website', 'picture']
