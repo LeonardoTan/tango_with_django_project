@@ -140,11 +140,14 @@
 			}
 		},
 		{
-			"file": "rango/forms.py",
+			"contents": "from django.shortcuts import render\n# from django.http import HttpResponse\nfrom rango.models import Category, Page\nfrom rango.forms import CategoryForm, PageForm\n# from django.http import HttpResponseRedirect, HttpResponse\nfrom django.contrib.auth.decorators import login_required\nfrom datetime import datetime\n\n\ndef index(request):\n    category_list = Category.objects.order_by('-likes')[:5]\n    pages = Page.objects.order_by('-views')[:5]\n    context_dict = {\"category_list\": category_list, \"pages\": pages}\n\n    # Get the number of visits to the site.\n    # We use the COOKIES.get() function to obtain the visits cookie.\n    # If the cookie exists, the value returned is casted to an integer.\n    # If the cookie doesn't exist, we default to zero and cast that.\n    visits = request.session.get('visits', 1)\n\n    reset_last_visit_time = False\n    response = render(request, 'rango/index.html', context_dict)\n    # Does the cookie last_visit exist?\n    if 'last_visit' in request.session:\n        # Yes it does! Get the cookie's value.\n        last_visit = request.session['last_visit']\n        # Cast the value to a Python date/time object.\n        last_visit_time = datetime.strptime(\n            last_visit[:-7], \"%Y-%m-%d %H:%M:%S\")\n        # If it's been more than a day since the last visit...\n        if (datetime.now() - last_visit_time).seconds > 5:\n            visits = visits + 1\n            # ...and flag that the cookie last visit needs to be updated\n            reset_last_visit_time = True\n    else:\n        # Cookie last_visit doesn't exist, so flag that it should be set.\n        reset_last_visit_time = True\n\n    context_dict['visits'] = visits\n    # Obtain our Response object early so we can add cookie information.\n    response = render(request, 'rango/index.html', context_dict)\n    if reset_last_visit_time:\n        request.session['last_visit'] = str(datetime.now())\n        request.session['visits'] = visits\n\n    return response\n\n\ndef about(request):\n    if request.session.get('visits'):\n        count = request.session.get('visits')\n    else:\n        count = 1\n    return render(request, 'rango/about.html', {'visits': count})\n\n\ndef category(request, category_name_slug):\n    context_dict = {}\n    try:\n        category = Category.objects.get(slug=category_name_slug)\n        context_dict['category_name'] = category.name\n        pages = Page.objects.filter(category=category)\n        context_dict['pages'] = pages\n        context_dict['category'] = category\n        context_dict['category_name_url'] = category_name_slug\n    except Category.DoesNotExist:\n        pass\n    return render(request, 'rango/category.html', context_dict)\n\n\n@login_required\ndef add_category(request):\n    if request.method == 'POST':\n        form = CategoryForm(request.POST)\n        # Have we been provided with a valid form?\n\n        if form.is_valid():\n            # Save the new category to the database.\n            form.save(commit=True)\n            # Now call the index() view.\n            # The user will be shown the homepage.\n            return index(request)\n        else:\n            # The supplied form contained errors - just print them to the\n            # terminal.\n            print(form.errors)\n    else:\n        # If the request was not a POST, display the form to enter details.\n        form = CategoryForm()\n\n    # Bad form (or form details), no form supplied...\n    # Render the form with error messages (if any).\n    return render(request, 'rango/add_category.html', {'form': form})\n\n\n@login_required\ndef add_page(request, category_name_slug):\n    \n    try:\n        cat = Category.objects.get(slug=category_name_slug)\n    except Category.DoesNotExist:\n        cat = None\n\n    if request.method == 'POST':\n        form = PageForm(request.POST)\n        print(request.POST)\n        if form.is_valid():\n            if cat:\n                page = form.save(commit=False)\n                page.category = cat\n                page.views = 0\n                page.save()\n                return category(request, category_name_slug)\n        else:\n            print(form.errors)\n    else:\n        form = PageForm()\n\n    context_dict = {'form': form, 'category': cat,\n                    'category_name_slug': category_name_slug}\n    return render(request, 'rango/add_page.html', context_dict)\n\n\n# def register(request):\n#     # A boolean value for telling the template whether the registration was successful.\n#     # Set to False initially. Code changes value to True when registration\n#     # succeeds.\n#     registered = False\n#     # If it's a HTTP POST, we're interested in processing form data.\n#     if request.method == 'POST':\n#         # Attempt to grab information from the raw form information.\n#         # Note that we make use of both UserForm and UserProfileForm.\n#         user_form = UserForm(data=request.POST)\n#         profile_form = UserProfileForm(data=request.POST)\n\n#     # If the two forms are valid...\n#         if user_form.is_valid() and profile_form.is_valid():\n#             # Save the user's form data to the database.\n#             user = user_form.save()\n#             # Now we hash the password with the set_password method.\n#             # Once hashed, we can update the user object.\n#             user.set_password(user.password)\n#             user.save()\n\n#             # Now sort out the UserProfile instance.\n#             # Since we need to set the user attribute ourselves, we set commit=False.\n#             # This delays saving the model until we're ready to avoid integrity\n#             # problems.\n#             profile = profile_form.save(commit=False)\n#             profile.user = user\n\n#             # Did the user provide a profile picture?\n#             # If so, we need to get it from the input form and put it in the\n#             # UserProfile model.\n#             if 'picture' in request.FILES:\n#                 profile.picture = request.FILES['picture']\n\n#             # Now we save the UserProfile model instance.\n#             profile.save()\n\n#             # Update our variable to tell the template registration was\n#             # successful.\n#             registered = True\n\n#             # Invalid form or forms - mistakes or something else?\n#             # Print problems to the terminal.\n#             # They'll also be shown to the user.\n#         else:\n#             print(user_form.errors, profile_form.errors)\n\n#     else:\n#         # Not a HTTP POST, so we render our form using two ModelForm instances.\n#         # These forms will be blank, ready for user input.\n#         user_form = UserForm()\n#         profile_form = UserProfileForm()\n\n#     # Render the template depending on the context.\n# return render(request, 'rango/register.html', {'user_form': user_form,\n# 'profile_form': profile_form, 'registered': registered})\n\n\n# def user_login(request):\n#     # If the request is a HTTP POST, try to pull out the relevant information.\n#     if request.method == 'POST':\n#         # Gather the username and password provided by the user.\n#         # This information is obtained from the login form.\n#         # we use request.POST.get('variable') as opposed to request.POST['variable'],\n#         # because the request.POST.get('<variable>') returns None, if the value does not exist,\n#         # while the request.POST['<variable>'] will raise key error exception\n#         username = request.POST.get('username')\n#         password = request.POST.get('password')\n#         # Use Django's machinery to attempt to see if the username/password\n#         # combination is valid - a User object is returned if it is.\n#         user = authenticate(username=username, password=password)\n#         # If we have a User object, the details are correct.\n#         # If None (Python's way of representing the absence of a value), no user\n#         # with matching credentials was found.\n#         if user:\n#             # Is the account active? It could have been disabled.\n#             if user.is_active:\n#                 # If the account is valid and active, we can log the user in.\n#                 # We'll send the user back to the homepage.\n#                 login(request, user)\n#                 return HttpResponseRedirect('/rango/')\n#             else:\n#                 # An inactive account was used - no logging in!\n#                 return HttpResponse(\"Your Rango account is disabled.\")\n#         else:\n#             # Bad login details were provided. So we can't log the user in.\n#             print(\"Invalid login details: {0}, {1}\".format(username, password))\n#             return HttpResponse(\"您输入的用户名或密码错误，请返回重试！\")\n#     # The request is not a HTTP POST, so display the login form.\n#     # This scenario would most likely be a HTTP GET.\n#     else:\n#         # No context variables to pass to the template system, hence the\n#         # blank dictionary object...\n#         return render(request, 'rango/login.html', {})\n\n# # Use the login_required() decorator to ensure only those logged in can\n# # access the view.\n\n\n@login_required\ndef restricted(request):\n    return render(request, 'rango/restricted.html', {})\n\n# Use the login_required() decorator to ensure only those logged in can\n# access the view.\n\n\n# @login_required\n# def user_logout(request):\n#     # Since we know the user is logged in, we can now just log them out.\n#     logout(request)\n#     # Take the user back to the homepage.\n#     return HttpResponseRedirect('/rango/')\n",
+			"file": "rango/views.py",
+			"file_size": 9477,
+			"file_write_time": 131164176160106598,
 			"settings":
 			{
-				"buffer_size": 1801,
-				"line_ending": "Windows"
+				"buffer_size": 9443,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -239,24 +242,30 @@
 	],
 	"file_history":
 	[
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/registration/logout.html",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/forms.py",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/views.py",
+		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/registration/password_change_done.html",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/C/Anaconda3/lib/site-packages/registration/backends/simple/views.py",
+		"/D/Users/Leonardo/Documents/路由中继配置.txt",
+		"/C/Program Files/Sublime Text 3/Packages/Color Scheme - Default.sublime-package",
+		"/C/Program Files/Sublime Text 3/sublime.py",
+		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/C/Anaconda3/lib/site-packages/registration/views.py",
 		"/C/Anaconda3/lib/site-packages/django/views/generic/edit.py",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/tango_with_django_project/urls.py",
 		"/C/Anaconda3/lib/site-packages/registration/backends/simple/urls.py",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/registration/password_change_form.html",
 		"/C/Anaconda3/Lib/site-packages/registration/backends/default/urls.py",
-		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/registration/logout.html",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/base.html",
 		"/C/Anaconda3/Lib/site-packages/registration/urls.py",
 		"/C/Anaconda3/lib/site-packages/registration/__init__.py",
 		"/C/Anaconda3/lib/site-packages/registration/backends/simple/__init__.py",
 		"/C/Anaconda3/Lib/site-packages/registration/backends/default/views.py",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/registration/password_change.html",
-		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/registration/password_change_done.html",
 		"/C/Anaconda3/lib/site-packages/django/views/generic/base.py",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/registration/registration_form.html",
-		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/views.py",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/urls.py",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/registration/registration_complete.html",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/index.html",
@@ -272,7 +281,6 @@
 		"/D/Users/Leonardo/Downloads/余罪完整 精校版.txt",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/register.html",
 		"/C/Anaconda3/lib/site-packages/django/db/models/fields/files.py",
-		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/forms.py",
 		"/C/Anaconda3/lib/site-packages/django/contrib/auth/models.py",
 		"/C/Anaconda3/lib/site-packages/django/db/models/base.py",
 		"/C/Anaconda3/lib/site-packages/django/contrib/admin/sites.py",
@@ -285,7 +293,6 @@
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/rango/add_category.html",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/populate_rango.py",
 		"/C/Anaconda3/lib/random.py",
-		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
 		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/User/JSON.sublime-settings",
 		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Djaneiro/Settings/HTML (Django).sublime-settings",
@@ -328,7 +335,6 @@
 		"/D/Users/Leonardo/Documents/python examples/template.txt",
 		"/D/Users/Leonardo/Documents/learngit/LICENSE.txt",
 		"/D/Users/Leonardo/Documents/learngit/readme.txt",
-		"/D/Users/Leonardo/Documents/路由中继配置.txt",
 		"/D/Users/Leonardo/Documents/Visual Studio 2015/Projects/ReadHtml/ReadHtml/App.xaml.cs",
 		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Pretty JSON/Pretty JSON.sublime-settings",
 		"/C/Users/Leonardo/PycharmProjects/awesome-python3-webapp/www/models.py",
@@ -340,7 +346,6 @@
 		"/D/Program Files/Python35/lib/re.py",
 		"/D/Program Files/Python35/lib/site-packages/jinja2/loaders.py",
 		"/D/Program Files/Python35/lib/json/__init__.py",
-		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/Anaconda/LICENSE",
 		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/AutoPEP8/Default.sublime-keymap",
 		"/C/Users/Leonardo/AppData/Roaming/Sublime Text 3/Packages/AutoPEP8/AutoPep8.sublime-settings",
@@ -371,6 +376,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"color",
 			"as_",
 			"as_view",
 			"logout",
@@ -418,7 +424,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -434,39 +440,40 @@
 						"selection":
 						[
 							[
-								1020,
-								1020
+								1430,
+								1430
 							]
 						],
 						"settings":
 						{
+							"is_init_dirty_state": false,
 							"origin_encoding": "ASCII",
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 285.0,
+						"translation.y": 321.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "rango/forms.py",
+					"file": "rango/views.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1801,
+						"buffer_size": 9443,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1801,
-								1801
+								3577,
+								3577
 							]
 						],
 						"settings":
@@ -476,10 +483,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 399.0,
+						"translation.y": 1539.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]

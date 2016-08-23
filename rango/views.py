@@ -21,7 +21,7 @@ def index(request):
     reset_last_visit_time = False
     response = render(request, 'rango/index.html', context_dict)
     # Does the cookie last_visit exist?
-    if 'last_visit' in request.session:  # 测试一下可行不
+    if 'last_visit' in request.session:
         # Yes it does! Get the cookie's value.
         last_visit = request.session['last_visit']
         # Cast the value to a Python date/time object.
