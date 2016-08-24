@@ -1,9 +1,14 @@
 {% extends "rango/base.html" %}
-
+{% load static %}
 {% block title %}
-	About
+    About
 {% endblock title %}
-{% block body_block %}		
-	<h1>This is a About page</h1><a href="/rango">Home</a><br/>
-    <p>Visits: {{ visits }}</p> 
+{% block body_block %}
+    <div class="page-header">
+        <h1>About page</h1>
+        <p>This is <strong>Rango's about page</strong></p>
+        <p>You've visited the site on <strong> {{ visits }} occasion(s)</strong></p>
+        <p>Here is a picture of Rango!</p><br/>
+        <img src="{% static "images/wow.jpg" %}" alt="Picture of Rango" width="300">
+    </div>
 {% endblock body_block %}

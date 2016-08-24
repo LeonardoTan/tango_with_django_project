@@ -51,8 +51,8 @@ class PageForm(forms.ModelForm):
 #         fields = ['username', 'email', 'password']
 
 
-# class UserProfileForm(forms.ModelForm):
-#     """docstring for Userp"""
-#     class Meta:
-#         model = UserProfile
-#         fields = ['website', 'picture']
+class UserProfileForm(forms.ModelForm):
+    """docstring for Userp"""
+    class Meta:
+        model = UserProfile
+        fields = ['website', 'picture']
