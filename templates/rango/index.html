@@ -4,14 +4,15 @@
     首 页
 {% endblock title %}
 {% block body_block %}
-    {% if user.is_authenticated %}
-        <div class="page-header">
-            <h1>Rango says... Hello {{ user.username }}!</h1>
-            {% else %}
-            <h1>Rango says... Hello World!</h1>
-        </div>
-    {% endif %}
-
+    <div class="jumbotron">
+        {% if user.is_authenticated %}
+            <div class="page-header">
+                <h1>Rango says... Hello {{ user.username }}!</h1>
+                {% else %}
+                <h1>Rango says... Hello World!</h1>
+            </div>
+        {% endif %}
+    </div>
     <div class="row placeholders">
         <div class="col-xs-12 col-sm-6 placeholder">
             <div class="panel panel-primary">

@@ -250,6 +250,8 @@
 	],
 	"file_history":
 	[
+		"/C/Anaconda3/Lib/site-packages/registration/forms.py",
+		"/C/Anaconda3/Lib/site-packages/registration/views.py",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/templates/registration/logout.html",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/forms.py",
 		"/D/Users/Leonardo/Documents/Python Examples/tango_with_django_project/rango/views.py",
@@ -448,8 +450,8 @@
 						"selection":
 						[
 							[
-								1430,
-								1430
+								956,
+								956
 							]
 						],
 						"settings":
@@ -517,6 +519,8 @@
 						],
 						"settings":
 						{
+							"is_init_dirty_state": false,
+							"origin_encoding": "ASCII",
 							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
